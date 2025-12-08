@@ -1,0 +1,44 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`MyAwesomeApp > Should match snapshop 1`] = `
+<div>
+  <div>
+    <h1
+      data-testid="first-name-title"
+    >
+      Diego
+    </h1>
+    <h3>
+      Valencia
+    </h3>
+    <p>
+      4
+    </p>
+    <p
+      class="mi-clase-favorita"
+    >
+      Elden rin,Mario 64,Megaman
+    </p>
+    <ul>
+      <li
+        style="background-color: blue; border-radius: 20px; padding: 10px;"
+      >
+        Elden rin
+      </li>
+      <li
+        style="background-color: blue; border-radius: 20px; padding: 10px;"
+      >
+        Mario 64
+      </li>
+      <li
+        style="background-color: blue; border-radius: 20px; padding: 10px;"
+      >
+        Megaman
+      </li>
+    </ul>
+    <h1>
+      Hola
+    </h1>
+  </div>
+</div>
+`;
