@@ -17,18 +17,20 @@ export const useGifs = () => {
     }
     const gifs = await getGifsByQuery(recurrent_term);
     setGifs(gifs);
+    gifsCache.current[term] = gifs;
   };
 
   const handleSearch = async (query: string) => {
     const parseQuery = query.trim().toLowerCase();
-    const exist_term = searches.includes(query);
 
-    if (parseQuery != "" && searches.length < 8 && exist_term == false) {
-      setSearches([parseQuery, ...searches]);
-      const gifs = await getGifsByQuery(query);
-      setGifs(gifs);
-      gifsCache.current[query] = gifs;
-    }
+    if (parseQuery.length === 0) return;
+
+    if (searches.includes(parseQuery)) return;
+
+    setSearches([parseQuery, ...searches].splice(0, 8));
+    const gifs = await getGifsByQuery(query);
+    setGifs(gifs);
+    gifsCache.current[parseQuery] = gifs;
   };
   return {
     // Values
